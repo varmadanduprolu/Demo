@@ -2,6 +2,7 @@ package com.pallavi.questionProject.service;
 
 import com.pallavi.questionProject.entity.Question;
 import com.pallavi.questionProject.entity.QuestionRequest;
+import com.pallavi.questionProject.exception.ResouceNotFoundException;
 import com.pallavi.questionProject.repository.QuestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,8 @@ public class QuestionService  {
     }
 
     public Question getQuestionById(Integer id) {
+        if (!questionRepository.existsQuestionById(id))
+            throw new ResouceNotFoundException("question with given id %s not present".formatted(id));
        return questionRepository.findQuestionById(id);
     }
 
