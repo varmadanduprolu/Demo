@@ -1,0 +1,35 @@
+#spring.datasource.url=jdbc:postgresql://172.17.0.2:5433/question
+#spring.jpa.generate-ddl=true
+#spring.datasource.username=postgres
+#spring.datasource.password=1729
+#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+#spring.jpa.properties.hibernate.format_sql=true
+#spring.jpa.hibernate.ddl-auto=update
+#server.port=8089
+
+#app:
+#  datasource:
+#    main:
+#      driver-class-name: org.postgresql.Driver
+#      jdbc-url: jdbc:postgresql://localhost:5432/question
+#      username: postgres
+#      password: '1729'
+#      pool-size: 30
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/question
+    username: postgres
+    password: 1729
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+server:
+  error:
+    include-binding-errors: always
+    include-message: always
