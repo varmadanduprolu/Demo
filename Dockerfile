@@ -1,5 +1,9 @@
 FROM openjdk:17
-COPY target/classes/ /tmp
-WORKDIR /tmp
-CMD java com.pallavi.questionProject
+COPY target/*.jar question.jar
+EXPOSE 8089
+#WORKDIR /tmp
+ENTRYPOINT ["java","-jar","question.jar"]
+
+
+
 

@@ -14,7 +14,6 @@
 	<name>questionProject</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<filename>question</filename>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
