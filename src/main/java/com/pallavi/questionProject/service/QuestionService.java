@@ -41,4 +41,17 @@ public class QuestionService  {
     public List<Question> getAllQuestion() {
       return questionRepository.findAll();
     }
+
+    public Question updateQuestion(Integer id, Question question) {
+        Question question1=getQuestionById(id);
+        question1.setQuestion(question.getQuestion());
+        question1.setOption1(question.getOption1());
+        question1.setOption2(question.getOption2());
+        question1.setOption3(question.getOption3());
+        question1.setOption4(question.getOption4());
+        question1.setCategory(question.getCategory());
+        question1.setCorrectAns(question.getCorrectAns());
+        question1.setDifficultyLevel(question.getDifficultyLevel());
+        return questionRepository.save(question1);
+    }
 }
